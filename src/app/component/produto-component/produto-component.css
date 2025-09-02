@@ -1,0 +1,26 @@
+
+  .btn-pink {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .btn-pink:hover {
+    background-color: #d63384;
+    color: white;
+  }
+
+  .list-group-item.gatinho-item {
+    background-color: #ffb6d5;
+    color: #d63384;
+    border: none;
+    border-bottom: 2px dashed #d63384; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .list-group-item.gatinho-item:last-child {
+    border-bottom: none;
+  }
+
