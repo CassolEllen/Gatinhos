@@ -1,0 +1,41 @@
+<div class="container mt-4 p-4 rounded shadow text-white" style="background-color: #f392c3;">
+    <h2 class="mb-3">
+      🏬 Lojas
+    </h2>
+  
+    <!-- Formulário para cadastrar nova loja -->
+    <div class="row g-2 align-items-center mb-3">
+      <div class="col-md-3">
+        <input class="form-control" [(ngModel)]="novaLoja.nome" placeholder="Nome da Loja">
+      </div>
+      <div class="col-md-3">
+        <input class="form-control" [(ngModel)]="novaLoja.endereco" placeholder="Endereço">
+      </div>
+      <div class="col-md-2">
+        <input class="form-control" [(ngModel)]="novaLoja.telefone" placeholder="Telefone">
+      </div>
+      <div class="col-md-2">
+        <input class="form-control" [(ngModel)]="novaLoja.documento" placeholder="Documento">
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-pink" (click)="adicionarLoja()">
+          ➕ Cadastrar
+        </button>
+      </div>
+    </div>
+  
+    <!-- Lista de lojas -->
+    <ul class="list-group mb-3">
+      <li *ngFor="let loja of lojas; let i = index" class="list-group-item produto-item d-flex justify-content-between align-items-center">
+        <span>
+          <strong>{{ loja.nome }}</strong> – {{ loja.endereco }} – {{ loja.telefone }}
+        </span>
+        <button class="btn btn-sm btn-outline-danger" (click)="removerLoja(i)">Remover</button>
+      </li>
+    </ul>
+  
+    <div *ngIf="lojas.length === 0" class="alert alert-info">
+      Nenhuma loja cadastrada 😿
+    </div>
+  </div>
+  
