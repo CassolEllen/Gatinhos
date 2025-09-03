@@ -14,34 +14,7 @@
             <i class="bi bi-search-heart"></i>
         </span>
         <input class="form-control"
-               [(ngModel)]="novoNome"
-               placeholder="Nome do Gatinho">
+               [(ngModel)]="nomeLoja"
+               placeholder="Nome da Loja">
       </div>
     </div>
-
-    <div class="col-auto">
-      <button class="btn btn-pink" (click)="adicionar()">
-        <i class="bi bi-heart"></i> Adicionar Gatinho 🐱
-      </button>
-    </div>
-  </div>
-
-  <ul class="list-group mb_3.5">
-    @for (p of produtos; track $index) {
-        <li class="list-group-item gatinho-item">
-          <div>
-            <span class="fw-bold">🐾 {{p.nome}}</span><br>
-            <small class="text-light">{{p.descricao}}</small>
-          </div>
-          <button class="btn btn-sm btn-outline-danger" (click)="remover(p.id)">
-            <i class="bi bi-trash3"></i>
-          </button>
-        </li>
-    }
-  </ul>
-
-  @if (produtos.length === 0) {
-    <div class="alert alert-info text-dark">Nenhum gatinho cadastrado 😿</div>
-  }
-</div>
-
