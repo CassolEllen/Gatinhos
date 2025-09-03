@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-loja-component',
-  imports: [],
+  selector: 'app-lojas',
   templateUrl: './loja-component.html',
-  styleUrl: './loja-component.css'
+  styleUrls: ['./loja-component.css']
 })
-export class LojaComponent {
+export class LojasComponent {
+  lojas: any[] = [];
+  novaLoja = { nome: '', endereco: '', telefone: '', documento: '' };
 
+  adicionarLoja() {
+    if (this.novaLoja.nome.trim()) {
+      this.lojas.push({ ...this.novaLoja });
+      this.novaLoja = { nome: '', endereco: '', telefone: '', documento: '' };
+    }
+  }
+
+  removerLoja(index: number) {
+    this.lojas.splice(index, 1);
+  }
 }

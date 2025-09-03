@@ -1,41 +1,47 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="loja-component.css">
+
 <div class="container mt-4 p-4 rounded shadow text-white" style="background-color: #f392c3;">
-    <h2 class="mb-3">
-      🏬 Lojas
-    </h2>
-  
-    <!-- Formulário para cadastrar nova loja -->
-    <div class="row g-2 align-items-center mb-3">
-      <div class="col-md-3">
-        <input class="form-control" [(ngModel)]="novaLoja.nome" placeholder="Nome da Loja">
-      </div>
-      <div class="col-md-3">
-        <input class="form-control" [(ngModel)]="novaLoja.endereco" placeholder="Endereço">
-      </div>
-      <div class="col-md-2">
-        <input class="form-control" [(ngModel)]="novaLoja.telefone" placeholder="Telefone">
-      </div>
-      <div class="col-md-2">
-        <input class="form-control" [(ngModel)]="novaLoja.documento" placeholder="Documento">
-      </div>
-      <div class="col-auto">
-        <button class="btn btn-pink" (click)="adicionarLoja()">
-          ➕ Cadastrar
-        </button>
+  <h2 class="mb-3">
+    <i class="bi bi-hearts"></i> Gatinhos
+  </h2>
+
+  <div class="row g-2 align-items-center mb-3">
+    <div class="col-sm-6 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">
+            <i class="bi bi-search-heart"></i>
+        </span>
+        <input class="form-control"
+               [(ngModel)]="novoNome"
+               placeholder="Nome do Gatinho">
       </div>
     </div>
-  
-    <!-- Lista de lojas -->
-    <ul class="list-group mb-3">
-      <li *ngFor="let loja of lojas; let i = index" class="list-group-item produto-item d-flex justify-content-between align-items-center">
-        <span>
-          <strong>{{ loja.nome }}</strong> – {{ loja.endereco }} – {{ loja.telefone }}
-        </span>
-        <button class="btn btn-sm btn-outline-danger" (click)="removerLoja(i)">Remover</button>
-      </li>
-    </ul>
-  
-    <div *ngIf="lojas.length === 0" class="alert alert-info">
-      Nenhuma loja cadastrada 😿
+
+    <div class="col-auto">
+      <button class="btn btn-pink" (click)="adicionar()">
+        <i class="bi bi-heart"></i> Adicionar Gatinho 🐱
+      </button>
     </div>
   </div>
-  
+
+  <ul class="list-group mb_3.5">
+    @for (p of produtos; track $index) {
+        <li class="list-group-item gatinho-item">
+          <div>
+            <span class="fw-bold">🐾 {{p.nome}}</span><br>
+            <small class="text-light">{{p.descricao}}</small>
+          </div>
+          <button class="btn btn-sm btn-outline-danger" (click)="remover(p.id)">
+            <i class="bi bi-trash3"></i>
+          </button>
+        </li>
+    }
+  </ul>
+
+  @if (produtos.length === 0) {
+    <div class="alert alert-info text-dark">Nenhum gatinho cadastrado 😿</div>
+  }
+</div>
+

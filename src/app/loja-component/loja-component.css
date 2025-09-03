@@ -1,0 +1,27 @@
+
+btn-pink {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .btn-pink:hover {
+    background-color: #d63384;
+    color: white;
+  }
+
+  .list-group-item.produto-item {
+    background-color: #fff0f6;
+    border: none;
+    border-bottom: 2px dashed #d63384; 
+    color: #5a0037;
+    font-weight: 500;
+  }
+  .list-group-item.produto-item:last-child {
+    border-bottom: none; 
+  }
+
+  input.form-control:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 0 0.2rem rgba(214, 51, 132, 0.25);
+  }
